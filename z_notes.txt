@@ -1,0 +1,81 @@
+Incident
+    - id: number
+    - status
+    - name
+    - description
+    - type
+
+Discovery
+    - Survey
+        - name: input
+        - description: input
+        - type (data quality/other): option
+    - Impact Assessment
+        - description (how is the business being impacted): input
+        - parties impacted (customer/associates/regulators): options/optional
+        - data lifecycle phase: (capture/transport/use): options
+    - root cause
+        - primary contributing cause (change execution/data use/documentation): option
+        - description: input
+        - data elements impacted: input/optional
+    - review
+
+Disc Pending QA
+    - review id
+    - decision: approve/reject
+
+Action Plan
+    -resolution path
+        - fix type: options (non-tech/others)
+        - regulatory issue?: radio y/n
+        - enhancement rationale: input optional
+        - funding required: radio y/n
+    - review
+
+ap pending QA
+    - review id
+    - decision: approve/reject
+
+Implementation
+    - implementation details
+        - resolution path: radio y/n
+        - description: input optional
+        - actions taken: input 
+    - final appoval
+        - decision: radio y/n
+    - review: dependent on resolution path and decision
+
+Imp Pending QA
+    - review id
+    - decision: approve/reject
+
+Complete
+
+
+{
+    steps: {
+        step1,
+        step2,
+        step3
+    }
+    step1: {
+        substeps: {
+            step1,
+            step2
+        }
+    }
+    step2: {
+        substeps: {
+            step1
+        }
+    }
+    step3: {
+
+    }
+}
+
+<div ngfor=let step of steps>
+    <stepTemplate step=step/>?
+</div>
+
+<stepTemplate></stepTemplate>

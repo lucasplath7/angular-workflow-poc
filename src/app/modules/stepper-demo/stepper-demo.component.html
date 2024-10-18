@@ -1,0 +1,31 @@
+<ng-container *ngTemplateOutlet="stepAccordion; context: {$implicit: stepper}"></ng-container>
+
+<div>{{ selectedStep }}</div>
+<div>{{ currentSection }}</div>
+
+<ng-template #stepAccordion let-step>
+    <ng-container *ngFor="let nextStep of step.stepOrder">
+        <button
+            mat-raised-button
+            extended
+            *ngIf="!step.steps[nextStep].stepOrder"
+            style="display:block; width: 100%; text-align: left"
+            (click)="selectStep(step.steps[nextStep].id)"
+        >
+            {{ step.steps[nextStep].stepLabel }}
+        </button>
+
+        <mat-accordion *ngIf="step.steps[nextStep].stepOrder">
+            <mat-expansion-panel
+                [expanded]="step.steps[nextStep].id === currentSection || childIsExpanded(step.steps[nextStep])"
+                (click)="selectSection(step.steps[nextStep].id, $event)"
+            >   
+                <mat-expansion-panel-header >
+                    <mat-panel-title> {{ step.steps[nextStep].stepLabel }} </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ng-container *ngTemplateOutlet="stepAccordion; context: {$implicit: step.steps[nextStep]}"></ng-container>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </ng-container>
+</ng-template>

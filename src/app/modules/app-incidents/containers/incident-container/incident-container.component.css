@@ -1,0 +1,4 @@
+.app-incident-container {
+  display: flex;
+  flex-direction: row;
+}

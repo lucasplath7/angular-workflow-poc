@@ -1,0 +1,9 @@
+::ng-deep app-main-content {
+  height: 100%;
+  width: 100%;
+  grid-area: main;
+  background-color: #FDFAF5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,17 @@
+::ng-deep app-incident-list-container {
+  min-width: 100% !important;
+  min-height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.incident-list {
+  min-width: 100% !important;
+  min-height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
